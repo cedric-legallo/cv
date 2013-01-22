@@ -1,0 +1,12 @@
+{
+  "name":"cvclg",
+  "version":"0.0.1",
+  "engines": {
+    "node": "0.X.x",
+    "npm":  "1.X.x"
+  },
+  "dependencies": {
+      "ejs":"0.8.3",
+      "express": "3.0.6"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cédric Le Gallo</title>
+    <script src="js/transparency.min.js"></script>
+    <style>
+      @import url('css/cv.css');
+      @import url('css/print.css') print;
+    </style>
+  </head>
+  <body>
+    <div id="identity">
+      <img id="photo" src ="img/photo.jpg"/>
+      <div>
+	<span>Cédric</span><span>Le Gallo</span><br/>
+	<span>cedric.legallo AT gmail.com</span><br/>
+	<span>33 rue de Rennes</span><br/>
+	<span>35 530 Brécé</span><br/>
+  <span id="site">www.google.com</span><br/>
+      </div>
+      <div id="cvtitle">
+        Ingénieur d'étude Web
+      </div>
+    </div>
+    <nav>
+    </nav>
+    <div id="keyword1">
+	
+	<% for(var i=0; i<Math.floor(compList.length/2); i++) {
+		var lvl = compList[i]["gsx$niveau"]["$t"];
+		%>
+		<h<%=lvl%>>
+		<%=compList[i]["gsx$competence"]["$t"]%>
+		</h<%=lvl%>>
+	<% } %>
+    </div>
+    <div id="keyword2">
+  
+  <% for(var i=Math.floor(compList.length/2); i<compList.length; i++) {
+    var lvl = compList[i]["gsx$niveau"]["$t"];
+    %>
+    <h<%=lvl%>>
+    <%=compList[i]["gsx$competence"]["$t"]%>
+    </h<%=lvl%>>
+  <% } %>
+    </div>
+    <div class="page-break"></div>
+    <div id="timeline-embed"></div>
+    <script type="text/javascript">
+      var timeline_config = {
+      width:              '100%',
+      height:             '60%',
+	  reverse:            true,
+      source:             'https://docs.google.com/spreadsheet/pub?key=0AiEH0wUq8MkHdHVjU3BQR18zYmNkTXZhcGc5c2Z1YWc&output=html',
+      start_at_end:       true,
+	  preload:            100,
+	  lang:               'fr',
+      css:                'tl/css/dark.css'
+      }
+    </script>
+    <script type="text/javascript" src="tl/js/storyjs-embed.js"></script>
+
+    <footer>
+      <a href="javascript:print();">
+  <img src="img/print.jpg" height="24px" alt="imprimer"/>
+      </a>
+      <a href="http://dev.w3.org/html5/spec/">
+	<img src="img/HTML5.png" height="24px" alt="HTML5"/>
+      </a>
+      <a href="http://nodejs.org/">
+	<img src="img/nodejs.jpg" height="24px" alt="node.js"/>
+      </a>
+     </footer>
+	 <script src="js/cv.js"></script>
+  </body>
+</html>
