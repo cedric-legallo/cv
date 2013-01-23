@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #AAA;
+    font-size:1.2em;
+    height:99%;
+    position:relative;
+}
+
+#identity, #main{
+    margin:15px;
+    display:inline-block;
+}
+
+#identity *{
+    float: left;
+}
+
+nav {
+    clear:both;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+#cvtitle{
+    font-size: 32pt;
+    margin: 30pt;
+}
+
+#keyword1, #keyword2{
+    position:absolute;
+    left: -10000px;
+}
