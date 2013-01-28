@@ -31,7 +31,11 @@ footer {
 
 #cvtitle{
     font-size: 32pt;
-    margin: 30pt;
+    margin: 50pt 0 0 30pt;
+}
+
+#site{
+    display:none;
 }
 
 #keyword1, #keyword2{

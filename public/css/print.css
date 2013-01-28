@@ -65,11 +65,11 @@ width:35%;
 }
 
 #keyword1{
-margin: 15pt 15% 15pt 0;
+margin: 40pt 0 15pt 15%;
 }
 
-#keyword1{
-margin: 15pt 0 15pt 15%;
+#keyword2{
+margin: 40pt 15% 15pt 0;
 }
 
 #keyword1 *, #keyword2 *{
@@ -82,4 +82,9 @@ float:right;
 } 
 #keyword2 *{
 float:left;
+}
+
+#cvtitle{
+    font-size: 32pt;
+    margin: 25pt 0 0 30pt;
 }
