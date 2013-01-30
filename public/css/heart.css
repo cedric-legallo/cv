@@ -1,0 +1,26 @@
+body {
+	background-color: #1A1A1A;
+    color: #CCC;
+}
+#heart1 {
+    padding: 25px;
+}
+#heart1 .heart-left, #heart1 .heart-right {
+    width: 800px;
+    height: 500px;
+    background-color: red;
+    display: inline-block;
+}
+
+#heart1 .heart-left {
+    -webkit-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+    -moz-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+    -o-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
+    border-radius: 500px 0 0 500px;
+}
+#heart1 .heart-right {
+    -webkit-transform: rotate(-45deg) scale(1) skew(1deg) translate(-43px, -43px);
+    -moz-transform: rotate(-45deg) scale(1) skew(1deg) translate(-43px, -43px);
+    -o-transform: rotate(-45deg) scale(1) skew(1deg) translate(-43px, -43px);
+    border-radius: 0 500px 500px 0;
+}

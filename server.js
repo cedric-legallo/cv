@@ -45,6 +45,10 @@ app.get('/convertList', function (req, res) {
     res.render('cl2html.ejs');
 });
 
+app.get('/HEART', function (req, res) {
+    res.render('heart.ejs');
+});
+
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
