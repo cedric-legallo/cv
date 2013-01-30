@@ -109,3 +109,7 @@ float:left;
     font-size: 32pt;
     margin: 25pt 0 0 30pt;
 }
+
+#site{
+	display:inline;
+}
