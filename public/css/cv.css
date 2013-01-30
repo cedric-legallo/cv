@@ -15,7 +15,7 @@ body {
     display:inline-block;
 }
 
-#identity *{
+#identity *:not(br){
     float: left;
 }
 
