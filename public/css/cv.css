@@ -19,6 +19,10 @@ body {
     float: left;
 }
 
+#identity div:first-of-type{
+    margin: 0 0 0 12px;
+}
+
 nav {
     clear:both;
 }
