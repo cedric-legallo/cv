@@ -1,26 +1,207 @@
 body {
 	background-color: #1A1A1A;
     color: #CCC;
+    overflow:hidden;
 }
-#heart1 {
+
+#main {
+	height: 100%;
+	width: 100%;
+	overflow:hidden;
+}
+
+@-webkit-keyframes heart-one {
+	0% {
+      
+    }
+
+	15% {
+     	-webkit-transform: scale(0.2);
+     	top:-100px; 
+     	left:-500px;
+    }
+
+    30% {
+      	top: 400px;
+    }
+
+    50% {
+    	-webkit-transform: scale(0.2);
+      	left: 250px;
+      	top: 400px;
+    }
+
+    65%{
+    	top: -100px;
+    	left: 250px;
+    }
+    100% {
+      	-webkit-transform: scale(1);
+     	top:0; 
+     	left:0;
+    }
+
+}
+
+@-webkit-keyframes heart-two {
+	0% {
+      
+    }
+
+	15% {
+     	-webkit-transform: scale(0.2);
+     	top:400px; 
+     	left:-500px;
+    }
+
+    30% {
+    	
+    	left: 250px;
+      	top: 400px;
+    }
+    40% {
+      	left:250px;
+    }
+
+    50% {
+    	-webkit-transform: scale(0.2);
+    	top:-100px;
+    }
+
+    65%{
+    	top: -100px;
+    	left: -300px;
+    }
+    100% {
+      	-webkit-transform: scale(1);
+     	top:0; 
+     	left:0;
+    }
+
+}
+
+@-webkit-keyframes heart-three {
+	0% {
+      
+    }
+
+	15% {
+     	-webkit-transform: scale(0.2);
+     	top:400px; 
+     	left:250px;
+    }
+
+    30% {
+    	
+    }
+
+    40% {
+      left: 250px;
+      top: -100px;
+    }
+
+	50% {
+    	-webkit-transform: scale(0.2);
+    }
+
+    65%{
+    	left: -300px;
+    }
+
+    85%{
+    	top:400px;
+    }
+
+    100% {
+      	-webkit-transform: scale(1);
+     	top:0; 
+     	left:0;
+    }
+
+}
+
+@-webkit-keyframes heart-four {
+	0% {
+      
+    }
+
+	15% {
+     	-webkit-transform: scale(0.2);
+     	top:-100px; 
+     	left:250px;
+    }
+
+	
+
+	30% {
+    	-webkit-transform: scale(0.2);
+      	top: -100px;
+    }
+
+    50% {
+    	-webkit-transform: scale(0.2);
+      	left: -300px;
+      	top: 400px;
+    }
+
+
+    85%{
+    	top: 400px;
+    	left:250px;
+    }
+    100% {
+      	-webkit-transform: scale(1);
+     	top:0; 
+     	left:0;
+    }
+
+}
+
+#heart1, #heart2, #heart3, #heart4 {
+	position:absolute;
     padding: 25px;
 }
-#heart1 .heart-left, #heart1 .heart-right {
-    width: 800px;
-    height: 500px;
-    background-color: red;
+#heart1 {
+    -webkit-animation: heart-one 10s linear 1s infinite;
+}
+#heart2 {
+    -webkit-animation: heart-two 10s linear 1s infinite;
+}
+#heart3 {
+    -webkit-animation: heart-three 10s linear 1s infinite;
+}
+#heart4 {
+    -webkit-animation: heart-four 10s linear 1s infinite;
+}
+
+#heart1 .heart-left, #heart1 .heart-right, #heart2 .heart-left, #heart2 .heart-right, #heart3 .heart-left, #heart3 .heart-right, #heart4 .heart-left, #heart4 .heart-right {
+	position:relative;
+    width: 640px;
+    height: 400px;
     display: inline-block;
 }
 
-#heart1 .heart-left {
-    -webkit-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
-    -moz-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
-    -o-transform: rotate(45deg) scale(1) skew(1deg) translate(0px);
-    border-radius: 500px 0 0 500px;
+#heart1 .heart-left, #heart2 .heart-left, #heart3 .heart-left, #heart4 .heart-left {
+    -webkit-transform:  translate(237px, 100px) rotate(45deg);
+    -moz-transform:  translate(237px, 100px) rotate(45deg);
+    -o-transform:  translate(237px, 100px) rotate(45deg);
+    border-radius: 400px 0 0 400px;
+    background: #ff0000; /* Old browsers */
+    background: -moz-linear-gradient(left, #ff0000 0%, #ffd505 40%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff0000), color-stop(40%,#ffd505)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #ff0000 0%,#ffd505 40%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #ff0000 0%,#ffd505 40%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #ff0000 0%,#ffd505 40%); /* IE10+ */
 }
-#heart1 .heart-right {
-    -webkit-transform: rotate(-45deg) scale(1) skew(1deg) translate(-43px, -43px);
-    -moz-transform: rotate(-45deg) scale(1) skew(1deg) translate(-43px, -43px);
-    -o-transform: rotate(-45deg) scale(1) skew(1deg) translate(-43px, -43px);
-    border-radius: 0 500px 500px 0;
+#heart1 .heart-right, #heart2 .heart-right, #heart3 .heart-right, #heart4 .heart-right {
+    -webkit-transform: translate(-237px, 100px) rotate(-45deg);
+    -moz-transform translate(-237px, 100px) rotate(-45deg);
+    -o-transform: translate(-237px, 100px) rotate(-45deg);
+    border-radius: 0 400px 400px 0;
+    background: #ff0000; /* Old browsers */
+    background: -moz-linear-gradient(right, #ff0000 1%, #ffd505 40%); /* FF3.6+ */
+    background: -webkit-linear-gradient(right, #ff0000 1%,#ffd505 40%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(right, #ff0000 1%,#ffd505 40%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(right, #ff0000 1%,#ffd505 40%); /* IE10+ */
+    background: linear-gradient(to left, #ff0000 1%,#ffd505 40%); /* W3C */
 }
