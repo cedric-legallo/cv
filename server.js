@@ -49,6 +49,10 @@ app.get('/HEART', function (req, res) {
     res.render('heart.ejs');
 });
 
+app.get('/GAIA', function (req, res) {
+    res.render('famille.ejs');
+});
+
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
