@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Love</title>
+
+	<style>
+	@import url('css/famille.css');
+	</style>
+</head>
+<body>
+<audio id="audio" src="img/famille/0.ogg" autoplay>
+</audio>
+<div id="main">
+	<div class="quarter">
+		<img src="img/famille/2.jpg">
+		<span>Klervi</span>
+	</div>
+	<div class="quarter">
+		<img src="img/famille/1.jpg">
+		<span>Cédric</span>
+	</div>
+	<div class="quarter">
+		<img src="img/famille/3.jpg">
+		<span>Yuna</span>
+	</div>
+	<div class="quarter">
+		<img src="img/famille/4.jpg">
+		<span>Efflam</span>
+	</div>
+	<div id="presente">Vous presentent</div>
+	<div id="gaia">
+		<img src="img/famille/5.jpg">
+		<span>La petite dernière</span>
+	</div>
+</div>
+
+<div id="main2" class="hidden">
+	<div class="semi" id="semi1">
+		<img src="img/famille/6.jpg">
+	</div>
+	<div class="semi" id="semi2">
+		<img src="img/famille/7.jpg">
+	</div>
+	<div id="phrase1">Il était une fois ...</div>
+	<div id="phrase2">Je vous passe les détails !</div>
+</div>
+<div id="main3" class="hidden">
+	<div class="tiers" id="tiers1">
+		<img src="img/famille/11.jpg">
+		<span>Yuna</span>
+	</div>
+	<div class="tiers" id="tiers2">
+		<img src="img/famille/12.jpg" class="hidden">
+		<img src="img/famille/21.jpg" class="hidden">
+		<span class="hidden">Efflam</span>
+	</div>
+	<div class="tiers" id="tiers3">
+		<img src="img/famille/3.jpg" class="hidden">
+		<img src="img/famille/22.jpg" class="hidden">
+		<img src="img/famille/23.jpg" class="hidden">
+		<span class="hidden">Ensemble</span>
+	</div>
+</div>
+<div id="main4" class="hidden">
+	<img src="img/famille/0.jpg" id="img0">
+	<span id="span1">Désormais on sera 3 !!!</span>
+	<span id="span2" class="hidden">Gaïa</span>
+	<span id="span3" class="hidden">Née le 21/04/2013</span>
+	<span id="span4" class="hidden">à 4h56</span>
+	<span id="span5" class="hidden">3kg100</span>
+	<span id="span6" class="hidden">50cm</span>
+	<span id="span7">Music : Crossroads of Destiny</span>
+	<span id="span8">& Starring Sky</span>
+	<a href="http://www.butterfly-tea.com/" id="span9">By BUTTERFLY TEA</span>
+</div>
+
+<script type="text/javascript">
+var pfx = ["webkit", "moz", "MS", "o", ""];
+function PrefixedEvent(element, type, callback) {
+	for (var p = 0; p < pfx.length; p++) {
+		if (!pfx[p]) type = type.toLowerCase();
+		element.addEventListener(pfx[p]+type, callback, false);
+	}
+}
+
+var gaia = document.getElementById("gaia");
+PrefixedEvent(gaia, "AnimationEnd", hideMain1);
+//PrefixedEvent(document.getElementById("audio"), "ended", showMain4)
+
+function hideMain1() {
+	document.getElementById("main").style.display = "none";
+	document.getElementById("main2").style.display = "block";
+	var phrase2 = document.getElementById("phrase2");
+	PrefixedEvent(phrase2, "AnimationEnd", hideMain2);
+	phrase2.className = "phrase";
+}
+
+function hideMain2() {
+	document.getElementById("phrase1").style.display = "none";
+	document.getElementById("phrase2").style.display = "none";
+	document.getElementById("main3").style.display = "block";
+	var scrWidthMid = window.screen.width / 2;
+	var i=0;
+	var semi1 = document.getElementById("semi1");
+	var semi2 = document.getElementById("semi2");
+	interv = setInterval(function(){
+		semi1.style.left = (0 - i) + "px";
+		semi2.style.left = i + "px";
+		i++;
+		if (i >= scrWidthMid){hideMain22();}
+	}, 8);
+	
+}
+
+function hideMain22(){
+	clearInterval(interv);
+	document.getElementById("main2").style.display = "none";
+	tiers2 = document.getElementById("tiers2");
+	tiers3 = document.getElementById("tiers3");
+	animeImage(tiers2.childNodes[1], function(){
+		animeImage(tiers3.childNodes[1], function(){
+			animeImage(tiers2.childNodes[3], function(){
+				tiers2.childNodes[5].style.display = "inline";
+				animeImage(tiers3.childNodes[3], function(){
+					animeImage(tiers3.childNodes[5], function(){
+						tiers3.childNodes[7].style.display = "inline";
+						setTimeout(showMain4, 3500);
+					});
+				});
+			});
+		});
+	});
+}
+
+function showMain4(){
+	//document.getElementById("main3").style.display = "none";
+	document.getElementById("audio").src = "img/famille/1.ogg";
+	var main4 = document.getElementById("main4");
+	main4.style.display = "block";
+	main4.className="aniMain4";
+	PrefixedEvent(main4, "AnimationEnd", endMain4);
+}
+
+function endMain4(){
+	document.getElementById("span1").style.display = "none";
+	document.getElementById("span2").style.display = "inline-block";
+	setTimeout(function(){
+		document.getElementById("span3").style.display = "inline-block";
+		document.getElementById("span4").style.display = "inline-block";
+	}, 2000);
+	setTimeout(function(){
+		document.getElementById("span5").style.display = "inline-block";
+		document.getElementById("span6").style.display = "inline-block";
+	}, 4000);
+}
+function animeImage(node, callback){
+	PrefixedEvent(node, "AnimationEnd", callback);
+	node.className = "image";
+}
+</script>
+</body>
+</html>
