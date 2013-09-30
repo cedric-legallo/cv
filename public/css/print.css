@@ -105,6 +105,18 @@ float:right;
 float:left;
 }
 
+.keywordh1{
+font-size: 2em;
+}
+
+.keywordh2{
+font-size: 1.5em;
+}
+
+.keywordh3{
+font-size: 1.17em;
+}
+
 #cvtitle{
     font-size: 32pt;
     margin: 25pt 0 0 30pt;

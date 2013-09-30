@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Cédric Le Gallo</title>
+    <meta name="description" content="Ingénieur d'études Web"/>
+    <meta name="robots" content="all"/>
     <script src="js/transparency.min.js"></script>
     <script type="text/javascript">
 
@@ -22,18 +24,18 @@
     </style>
   </head>
   <body>
-    <div id="identity">
+    <div id="identity" itemscope itemtype="http://schema.org/Person">
       <img id="photo" src ="img/photo.jpg"/>
       <div>
-	<span>Cédric&nbsp;</span><span>Le Gallo</span><br />
-	<span>cedric.legallo AT gmail.com</span><br />
-	<span>33 rue de Rennes</span><br />
-	<span>35 530 Brécé</span><br />
+	<span itemprop="givenName">Cédric</span>&nbsp;<span itemprop="familyName">Le Gallo</span><br />
+	<span itemprop="email">cedric.legallo AT gmail.com</span><br />
+	<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">33 rue de Rennes</span></span><br />
+	<span itemprop="postalCode">35 530</span><span itemprop="addressLocality"> Brécé</span><br />
   <span id="site">www.cedriclegallo.fr</span><br />
       </div>
-      <div id="cvtitle">
+      <h1 id="cvtitle" itemprop="jobTitle">
         Ingénieur d'études Web
-      </div>
+      </h1>
     </div>
     <nav>
     </nav>
@@ -42,9 +44,9 @@
 	<% for(var i=0; i<Math.floor(compList.length/2); i++) {
 		var lvl = compList[i]["gsx$niveau"]["$t"];
 		%>
-		<h<%=lvl%>>
+		<span class="keywordh<%=lvl%>">
 		<%=compList[i]["gsx$competence"]["$t"]%>
-		</h<%=lvl%>>
+		</span>
 	<% } %>
     </div>
     <div id="keyword2">
@@ -52,9 +54,9 @@
   <% for(var i=Math.floor(compList.length/2); i<compList.length; i++) {
     var lvl = compList[i]["gsx$niveau"]["$t"];
     %>
-    <h<%=lvl%>>
+    <span class="keywordh<%=lvl%>">
     <%=compList[i]["gsx$competence"]["$t"]%>
-    </h<%=lvl%>>
+    </span>
   <% } %>
     </div>
     <div class="page-break"></div>
@@ -68,7 +70,8 @@
       start_at_end:       true,
 	  preload:            100,
 	  lang:               'fr',
-      css:                'tl/css/dark.css'
+      css:                'tl/css/dark.css',
+      hash_bookmark: true
       }
     </script>
     <script type="text/javascript" src="tl/js/storyjs-embed.js"></script>
