@@ -78,43 +78,15 @@ clear:both;
 padding-top:10pt;
 }
 
-#keyword1, #keyword2{
+.keywords{
 position:relative;
 float:left;
 left: 0px;
-width:35%;
+width:95%;
 }
 
-#keyword1{
-margin: 40pt 0 15pt 15%;
-}
-
-#keyword2{
-margin: 40pt 15% 15pt 0;
-}
-
-#keyword1 *, #keyword2 *{
-position:relative;
-padding:5pt;
-}
-
-#keyword1 *{
-float:right;
-} 
-#keyword2 *{
-float:left;
-}
-
-.keywordh1{
-font-size: 2em;
-}
-
-.keywordh2{
-font-size: 1.5em;
-}
-
-.keywordh3{
-font-size: 1.17em;
+.keywords img{
+width:100%;
 }
 
 #cvtitle{

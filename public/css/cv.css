@@ -42,7 +42,7 @@ footer {
     display:none;
 }
 
-#keyword1, #keyword2{
+#keyword1, #keyword2, .keywords{
     position:absolute;
     left: -10000px;
 }
